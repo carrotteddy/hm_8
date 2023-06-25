@@ -14,7 +14,7 @@ public class Magic extends Hero {
     @Override
     public void applySuperPower(Boss boss, Hero[] heroes) {
         for (int i = 0; i < heroes.length; i++) {
-            if (this != heroes[i] && !(heroes[i] instanceof Witcher) && heroes[i].getHealth() != 0) {
+            if (this != heroes[i] && heroes[i].getDamage() > 0 && heroes[i].getHealth() != 0) {
                 heroes[i].setDamage(getDamage() + boostPoints);
                 System.out.println(getClass().getSimpleName() + " " + getName() + " увеличил урон игрока "
                         + heroes[i].getName() + " на " + boostPoints);
